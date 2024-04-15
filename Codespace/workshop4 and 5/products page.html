@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trending Clothes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+		background-color: linen;
+    }
+
+    h1 {
+        font-family: arial;
+        font-style: normal;
+        font-weight: 400;
+        padding: 40px;
+        line-height: 1.2;
+    }
+
+    .title {
+        text-align: center;
+        margin: 0 auto 80px;
+        position: relative;
+        color: #555;
+        text-decoration: none;
+    }
+	 .navbar {
+    display: flex;
+    top: 0;
+    left: 0;
+	right: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav {
+    flex: 1;
+    justify-content: space-between;
+    text-align: right;
+  }
+
+  nav ul {
+    display: inline-block;
+    list-style-type: none;
+	font-weight: bold;  
+    font-size: 20px;  
+  }
+  
+ nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+    .card .container {
+        display: inline-block;
+        flex-direction: column;
+        gap: 30px;
+		width: 30%;
+        background-color: dirty white;
+        padding: 40px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .card-body {
+        font-family: arial;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 1;
+        padding: 30px;
+        text-rendering: optimize ligibility;
+    }
+
+    .card {
+        display: inline-block;
+        padding: 30px;
+        list-style-type: none;
+        align-items: center;
+        box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.3);
+		width: 18rem;
+    }
+
+    .card-image-top {
+        border-top-left-radius: 0.50rem;
+        border-top-right-radius: 0.50rem;
+        content: "";
+        margin: 0 auto 1rem;
+        width: 40%;
+    }
+
+
+    .card-text {
+        flex: 1 1 auto;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 50px;
+    }
+
+    .column {
+        flex: 17%;
+        max-width: 20%;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <nav class="navbar" style="background-color: lightblue; margin: 10px;">
+        <div class="container-fluid">
+             <ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="create_record.php">Add Records</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="read_table.php">Read Records</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="update_record.php">Update Record</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="delete_record.php">Delete Record</a>
+                        </li>
+                    </ul>
+				</div>
+    </nav>
+    <h1 class="title">Products</h1>
+    <div class="text-center container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card text-center" style="width: 20rem;">
+                    <img src="Images/product-1.png" alt=" " class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Pullover</h5>
+                        <p class="card-text">Bright and Bold</p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+						<a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card text-center" style="width: 20rem;">
+                    <img src="Images/product-2.png" alt=" " class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Dress</h5>
+                        <p class="card-text">Elegant</p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+						<a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card text-center" style="width: 21rem;">
+                    <img src="Images/product-7.png" alt=" " class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Bag</h5>
+                        <p class="card-text">Fashionable</p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+						<a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+					</div>
+            </div>
+			 <div class="col-sm">
+                <div class="card text-center" style="width: 22rem;">
+                    <img src="Images/product-3.png" alt=" " class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Watch</h5>
+                        <p class="card-text">Stylish</p>
+                        <a href="#" class="btn btn-primary">Edit</a>
+						<a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+        </div>
+    </div>
+	<?php 
+	
+	# Connect to the database.
+	  require ('codespace.php'); 
+
+  
+		
+	
+# Close database connection.
+  mysqli_close($conn); 
+  exit();
+?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+		
+	<script src=" 
+https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity=" 
+sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"> 
+</script> 
+       
+    
+		
+</body>
+
+</html>
